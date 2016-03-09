@@ -46,6 +46,19 @@ public final class LoginManager implements IManager<LoginModel> {
         return model;
     }
 
+    public LoginModel GetFromUserId(String userId) throws  SQLException {
+        ResultSet rs = ExecuteQuery("SELECT * FROM Login WHERE UserId = " + userId + ";");
+        LoginModel model = new LoginModel();
+        while (rs.next()) {
+            model.Id = rs.getInt("Id");
+            model.Password = rs.getString("Password");
+            model.Username = rs.getString("Username");
+            model.UserId = rs.getInt("UserId");
+        }
+        rs.close();
+        return model;
+    }
+
     @Override
     public void Insert(LoginModel model) throws SQLException {
         String query = "INSERT INTO Login (Username, Password) " +
