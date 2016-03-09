@@ -1,7 +1,9 @@
 package models;
 
 import controllers.RouteManager;
+import org.json.JSONException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 /**
@@ -15,10 +17,10 @@ public class JourneyTemplate {
     private Date StartDatetime;
 
 
-    public JourneyTemplate(int id,java.lang.String startLocation, Date startDatetime) {
+    public JourneyTemplate(int id,java.lang.String startLocation, Date startDatetime) throws IOException, JSONException {
         Id = id;
         StartLocation = startLocation;
-        PointsCollection =RouteManager.GetRoutePoints(StartLocation);
+        PointsCollection =RouteManager.GetRouteWaypoints(StartLocation);
         StartDatetime = startDatetime;
     }
 
