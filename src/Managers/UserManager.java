@@ -1,0 +1,80 @@
+package Managers;
+
+import DatabaseModels.UserModel;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import static Managers.DbManager.ExecuteQuery;
+import static Managers.DbManager.ExecuteUpdate;
+
+/**
+ * Created by Johan on 09/03/2016.
+ */
+public class UserManager implements IManager<UserModel> {
+    @Override
+    public List<UserModel> GetAll() throws Exception {
+        List<UserModel> models = new ArrayList<>();
+        ResultSet rs = ExecuteQuery("SELECT * FROM User");
+
+        while (rs.next()) {
+            UserModel model = new UserModel();
+            model.Id = rs.getInt("Id");
+            model.CalendarId = rs.getInt("CalendarId");
+            model.JourneyTemplateId = rs.getInt("JourneyTemplateId");
+            model.JourneyId = rs.getInt("JourneyId");
+            model.CarId = rs.getInt("CarId");
+            model.Firstname = rs.getString("Firstname");
+            model.Lastname = rs.getString("Lastname");
+            model.HomeLocation = rs.getString("HomeLocation");
+            model.Class = rs.getString("Class");
+            model.Sex = rs.getBoolean("Sex");
+            model.IsDriver = rs.getBoolean("IsDriver");
+            models.add(model);
+        }
+
+        rs.close();
+        return models;
+    }
+
+    @Override
+    public UserModel Get(String id) throws Exception {
+        UserModel model = new UserModel();
+        ResultSet rs = ExecuteQuery("SELECT * FROM User WHERE Id = " + id + ";");
+
+        while (rs.next()) {
+            model.Id = rs.getInt("Id");
+            model.CalendarId = rs.getInt("CalendarId");
+            model.JourneyTemplateId = rs.getInt("JourneyTemplateId");
+            model.JourneyId = rs.getInt("JourneyId");
+            model.CarId = rs.getInt("CarId");
+            model.Firstname = rs.getString("Firstname");
+            model.Lastname = rs.getString("Lastname");
+            model.HomeLocation = rs.getString("HomeLocation");
+            model.Class = rs.getString("Class");
+            model.Sex = rs.getBoolean("Sex");
+            model.IsDriver = rs.getBoolean("IsDriver");
+        }
+        rs.close();
+        return model;
+    }
+
+    @Override
+    public void Insert(UserModel model) throws Exception {
+        String query = "INSERT INTO User (Firstname, Lastname, HomeLocation, Class, Sex, IsDriver, CalendarId, JourneyTemplateId, JourneyId, CarId) VALUES (" + model.Firstname + ", " + model.Lastname + ", " + model.HomeLocation + ", " + model.Class + ", " + model.Sex + ", " + model.IsDriver + ", " + model.CalendarId + ", " + model.JourneyTemplateId + ", " + model.JourneyId + ", " + model.CarId + ");";
+        int rs = ExecuteUpdate(query);
+    }
+
+    @Override
+    public void Update(UserModel model) throws Exception {
+        String query = "UPDATE User SET Firstname = " + model.Firstname + ", Lastname = " + model.Lastname + ", HomeLocation = " + model.HomeLocation + ", Class = " + model.Class + ", Sex = " + model.Sex + ", IsDriver = " + model.IsDriver + ", CalendarId = " + model.CalendarId + ", JourneyTemplateId =  " + model.JourneyTemplateId + ", JourneyId = " + model.JourneyId + ", CarId = " + model.CarId + " WHERE Id = " + model.Id + ";";
+        int rs = ExecuteUpdate(query);
+    }
+
+    @Override
+    public void Delete(UserModel model) throws Exception {
+        String query = "DELETE FROM User WHERE Id = " + model.Id + ";";
+        int rs = ExecuteUpdate(query);
+    }
+}
