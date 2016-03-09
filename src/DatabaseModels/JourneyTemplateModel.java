@@ -9,4 +9,6 @@ public class JourneyTemplateModel extends DbContext {
     public String StartLocation;
     public String PointCollection;
     public Date StartDateTime;
+    public int PlaceAvailable;
+    public int UserId;
 }

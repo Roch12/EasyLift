@@ -20,9 +20,11 @@ public class JourneyTemplateManager implements IManager<JourneyTemplateModel> {
         while (rs.next()) {
             JourneyTemplateModel model = new JourneyTemplateModel();
             model.Id = rs.getInt("Id");
+            model.UserId = rs.getInt("UserId");
             model.StartDateTime = rs.getDate("StartDateTime");
             model.PointCollection = rs.getString("PointCollections");
             model.StartLocation = rs.getString("StartLocation");
+            model.PlaceAvailable = rs.getInt("PlaceAvailable");
             models.add(model);
         }
         rs.close();
@@ -36,9 +38,11 @@ public class JourneyTemplateManager implements IManager<JourneyTemplateModel> {
 
         while (rs.next()) {
             model.Id = rs.getInt("Id");
+            model.UserId = rs.getInt("UserId");
             model.StartDateTime = rs.getDate("StartDateTime");
             model.PointCollection = rs.getString("PointCollections");
             model.StartLocation = rs.getString("StartLocation");
+            model.PlaceAvailable = rs.getInt("PlaceAvailable");
         }
         rs.close();
         return model;
@@ -46,13 +50,15 @@ public class JourneyTemplateManager implements IManager<JourneyTemplateModel> {
 
     @Override
     public void Insert(JourneyTemplateModel model) throws Exception {
-        String query = "INSERT INTO JourneyTemplate (StartLocation, PointCollection, StartDateTime) VALUES (" + model.StartLocation + ", " + model.PointCollection + ", " + model.StartDateTime + ");";
+        String query = "INSERT INTO JourneyTemplate (StartLocation, PointCollection, StartDateTime, PlaceAvailable)" +
+                " VALUES (" + model.StartLocation + ", " + model.PointCollection + ", " + model.StartDateTime + ", "+model.PlaceAvailable+");";
         int rs = ExecuteUpdate(query);
     }
 
     @Override
     public void Update(JourneyTemplateModel model) throws Exception {
-        String query = "UPDATE JourneyTemplate SET StartLocation = " + model.StartLocation + ", PointCollection = " + model.PointCollection + ", StartDateTime = " + model.StartDateTime + " WHERE Id = " + model.Id + ";";
+        String query = "UPDATE JourneyTemplate SET" +
+                " StartLocation = " + model.StartLocation + ", PointCollection = " + model.PointCollection + ", StartDateTime = " + model.StartDateTime + " WHERE Id = " + model.Id + ", PlaceAvailable = "+model.PlaceAvailable+";";
         int rs = ExecuteUpdate(query);
     }
 

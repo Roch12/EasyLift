@@ -7,7 +7,7 @@ public class UserModel extends DbContext {
     public String Firstname;
     public String Lastname;
     public String HomeLocation;
-    public String Class;
+    public String Promotion;
     public boolean Sex;
     public boolean IsDriver;
     public int CalendarId;

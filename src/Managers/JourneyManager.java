@@ -24,7 +24,6 @@ public class JourneyManager implements IManager<JourneyModel> {
             model.JourneyId = rs.getInt("JourneyId");
             model.UserId = rs.getInt("UserId");
             model.IsDriver = rs.getBoolean("IsDriver");
-            model.PlaceAvailable = rs.getInt("PlaceAvailable");
             models.add(model);
         }
         rs.close();
@@ -42,7 +41,6 @@ public class JourneyManager implements IManager<JourneyModel> {
             model.JourneyId = rs.getInt("JourneyId");
             model.UserId = rs.getInt("UserId");
             model.IsDriver = rs.getBoolean("IsDriver");
-            model.PlaceAvailable = rs.getInt("PlaceAvailable");
         }
         rs.close();
         return model;
@@ -58,7 +56,6 @@ public class JourneyManager implements IManager<JourneyModel> {
             model.JourneyId = rs.getInt("JourneyId");
             model.UserId = rs.getInt("UserId");
             model.IsDriver = rs.getBoolean("IsDriver");
-            model.PlaceAvailable = rs.getInt("PlaceAvailable");
         }
         rs.close();
         return model;
