@@ -61,14 +61,14 @@ public final class LoginManager implements IManager<LoginModel> {
 
     @Override
     public void Insert(LoginModel model) throws SQLException {
-        String query = "INSERT INTO Login (Username, Password) " +
-                "VALUES (" + model.Username + ", " + model.Password + ");";
+        String query = "INSERT INTO Login (Username, Password, UserId) " +
+                "VALUES (" + model.Username + ", " + model.Password + ", "+model.UserId+");";
         int rs = ExecuteUpdate(query);
     }
 
     @Override
     public void Update(LoginModel model) throws SQLException {
-        String query = "UPDATE Login SET Username = " + model.Username + ", Password = " + model.Password + " WHERE Id = " + model.Id + ";";
+        String query = "UPDATE Login SET Username = " + model.Username + ", Password = " + model.Password + ", UserId = "+model.UserId+" WHERE Id = " + model.Id + ";";
         int rs = ExecuteUpdate(query);
     }
 

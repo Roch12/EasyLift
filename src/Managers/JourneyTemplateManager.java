@@ -50,15 +50,17 @@ public class JourneyTemplateManager implements IManager<JourneyTemplateModel> {
 
     @Override
     public void Insert(JourneyTemplateModel model) throws Exception {
-        String query = "INSERT INTO JourneyTemplate (StartLocation, PointCollection, StartDateTime, PlaceAvailable)" +
-                " VALUES (" + model.StartLocation + ", " + model.PointCollection + ", " + model.StartDateTime + ", "+model.PlaceAvailable+");";
+        String query = "INSERT INTO JourneyTemplate (StartLocation, PointCollection, StartDateTime, PlaceAvailable, UserId)" +
+                " VALUES (" + model.StartLocation + ", " + model.PointCollection + ", " + model.StartDateTime + ", " + model.PlaceAvailable + ", "+model.UserId+");";
         int rs = ExecuteUpdate(query);
     }
 
     @Override
     public void Update(JourneyTemplateModel model) throws Exception {
-        String query = "UPDATE JourneyTemplate SET" +
-                " StartLocation = " + model.StartLocation + ", PointCollection = " + model.PointCollection + ", StartDateTime = " + model.StartDateTime + " WHERE Id = " + model.Id + ", PlaceAvailable = "+model.PlaceAvailable+";";
+        String query = "UPDATE JourneyTemplate SET " +
+                "StartLocation = " + model.StartLocation + ", PointCollection = " + model.PointCollection + ", " +
+                "StartDateTime = " + model.StartDateTime + ", PlaceAvailable = " + model.PlaceAvailable + " " +
+                "WHERE Id = " + model.Id + ";";
         int rs = ExecuteUpdate(query);
     }
 

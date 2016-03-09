@@ -63,13 +63,15 @@ public class JourneyManager implements IManager<JourneyModel> {
 
     @Override
     public void Insert(JourneyModel model) throws Exception {
-        String query = "INSERT INTO Journey (UserId, JourneyId, CarId, IsDriver) VALUES (" + model.UserId + ", " + model.JourneyId + ", " + model.CarId + ", " + model.IsDriver + ");";
+        String query = "INSERT INTO Journey (UserId, JourneyId, CarId, IsDriver)" +
+                " VALUES (" + model.UserId + ", " + model.JourneyId + ", " + model.CarId + ", " + model.IsDriver + ");";
         int rs = ExecuteUpdate(query);
     }
 
     @Override
     public void Update(JourneyModel model) throws Exception {
-        String query = "UPDATE Journey SET UserId = " + model.UserId + ", JourneyId = " + model.JourneyId + ", CarId = " + model.CarId + ", IsDriver = " + model.IsDriver + " WHERE Id = " + model.Id + ";";
+        String query = "UPDATE Journey SET UserId = " + model.UserId + ", JourneyId = " + model.JourneyId + ", CarId = " + model.CarId + ", IsDriver = " + model.IsDriver + " " +
+                "WHERE Id = " + model.Id + ";";
         int rs = ExecuteUpdate(query);
     }
 
