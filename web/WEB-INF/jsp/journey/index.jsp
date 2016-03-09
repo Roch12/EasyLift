@@ -2,7 +2,20 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <t:layout_simple>
+
     <jsp:body>
+
+
+        <header class="intro-header">
+            <div style="width: 100%">
+                <iframe style="width:100%" height="400" src="http://regiohelden.de/google-maps/map_en.php?height=400&amp;hl=en&amp;q=22%20impasse%20charles%20fourrier%20toulouse+(Ingesup)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+        </header>
+
+        <div class="container" style="padding-bottom: 15px; padding-top: 30px;">
+
+
+
         <div class="col-md-9">
             <div class="row">
             <div class="panel panel-info">
@@ -121,5 +134,6 @@
                 </div>
             </div>
         </div>
+        </div><!-- /.container -->
     </jsp:body>
 </t:layout_simple>

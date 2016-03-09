@@ -28,7 +28,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li style="color: black"><a href="/">Home</a></li>
-                <li style="color: black"><a href="/Journey">Journey</a></li>
+                <li style="color: black"><a href="/Journey/Search">Search</a></li>
             </ul>
             <a style=" padding: 8px 15px;" class="navbar-brand" href="/">
                 <img style="height: 40px;" src="/resources/img/Easylift_logo.png"/>
@@ -41,15 +41,8 @@
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header">
-        <div style="width: 100%">
-            <iframe style="width:100%" height="400" src="http://regiohelden.de/google-maps/map_en.php?height=400&amp;hl=en&amp;q=22%20impasse%20charles%20fourrier%20toulouse+(Ingesup)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-        </div>
-</header>
 
-<div class="container" style="padding-bottom: 15px; padding-top: 30px;">
-        <jsp:doBody/>
-</div><!-- /.container -->
+<jsp:doBody/>
 
 <hr>
 

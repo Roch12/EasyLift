@@ -9,7 +9,6 @@
 
     <context:component-scan base-package="controllers" />
 
-    <bean name="/Journey" class="controllers.JourneyController"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/journey/" />
         <property name="suffix" value=".jsp" />
