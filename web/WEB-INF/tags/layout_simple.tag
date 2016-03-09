@@ -21,27 +21,16 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+<nav class="navbar navbar-default navbar-custom-simple navbar-fixed-top">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <%--<a class="navbar-brand" href="index.html">Start Bootstrap</a>--%>
-        </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/">Home</a></li>
-                <li><a href="/Journey">Journey</a></li>
+                <li style="color: black"><a href="/">Home</a></li>
+                <li style="color: black"><a href="/Journey">Journey</a></li>
             </ul>
-            <a style="display:none; padding: 8px 15px;" class="navbar-brand" href="/">
+            <a style=" padding: 8px 15px;" class="navbar-brand" href="/">
                 <img style="height: 40px;" src="/resources/img/Easylift_logo.png"/>
             </a>
         </div>
@@ -52,21 +41,13 @@
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('/resources/img/Easylift_cover.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <img style="width: 300px;" src="/resources/img/Easylift_logo_white.png"/>
-                    <hr class="small">
-                    <span class="subheading">The high way to knowledge</span>
-                </div>
-            </div>
+<header class="intro-header">
+        <div style="width: 100%">
+            <iframe style="width:100%" height="400" src="http://regiohelden.de/google-maps/map_en.php?height=400&amp;hl=en&amp;q=22%20impasse%20charles%20fourrier%20toulouse+(Ingesup)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </div>
-    </div>
 </header>
 
-<div class="container" style="padding-bottom: 15px;">
+<div class="container" style="padding-bottom: 15px; padding-top: 30px;">
         <jsp:doBody/>
 </div><!-- /.container -->
 
@@ -110,6 +91,5 @@
 </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/clean-blog.js"></script>
 </body>
 </html>

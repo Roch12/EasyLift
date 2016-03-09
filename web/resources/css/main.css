@@ -1,3 +1,307 @@
 .starter-template{
     padding-top: 65px;
 }
+
+p {
+    line-height: 1.5;
+    margin: 30px 0;
+}
+
+.font18 {
+    font-size: 18px;
+}
+.font-bold, .topsubnav ul li a:hover {
+    font-weight: 700;
+}
+
+.mas, .mhs, .mls {
+    margin-left: 8px;
+}
+.man, .mbn, .mvn, .navbar-text {
+    margin-bottom: 0;
+}
+
+.tiles{
+    box-sizing: border-box;
+    color: rgb(108, 109, 111);
+    height: 97px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    perspective-origin: 228.75px 46px;
+    transform-origin: 228.75px 46px;
+    background: rgb(244, 244, 244) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(108, 109, 111);
+    font: normal normal normal normal 16px / 27.5555px Karla, Helvetica, Arial, sans-serif;
+    margin: 0px 0px 27px;
+    outline: rgb(108, 109, 111) none 0px;
+}
+
+.latest-left {
+    margin-top: 14px;
+}
+
+.prn {
+    padding-right: 0;
+}
+
+.pln {
+    padding-left: 0;
+}
+
+.bg-notification {
+    background-color: #f4f4f4!important;
+}
+
+.v-middle {
+    vertical-align: middle!important;
+}
+
+.img-circle {
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid #6CCDDA;
+    width: 64px;
+    height: 64px;
+}
+
+.img-circle-high {
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid #6CCDDA;
+    width: 128px;
+    height: 128px;
+}
+
+.latesttripname{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.display-ib {
+    display: inline-block;
+}
+
+.bg-journey {
+    background-color: #e7e7e7;
+}
+
+.pam, .phm, .plm {
+    padding-left: 16px;
+}
+.pas, .pbs, .pvs {
+    padding-bottom: 8px;
+}
+.pas, .pts, .pvs {
+    padding-top: 8px;
+}
+
+#trajetCircleDiv {
+    box-sizing: border-box;
+    color: rgb(108, 109, 111);
+    height: 76px;
+    position: relative;
+    text-align: center;
+    width: 18px;
+    perspective-origin: 9px 38px;
+    transform-origin: 9px 38px;
+    border: 0px none rgb(108, 109, 111);
+    font: normal normal normal normal 16px / 27.5555px Karla, Helvetica, Arial, sans-serif;
+    outline: rgb(108, 109, 111) none 0px;
+}
+
+#trajetCircleSpan1 {
+    box-sizing: border-box;
+    color: #6CCDDA;
+    display: block;
+    height: 18px;
+    text-align: center;
+    width: 18px;
+    perspective-origin: 9px 9px;
+    transform-origin: 9px 9px;
+    border: 4px solid #6CCDDA;
+    border-radius: 50% 50% 50% 50%;
+    font: normal normal normal normal 16px / 22px Karla, Helvetica, Arial, sans-serif;
+    outline: #6CCDDA none 0px;
+}
+
+#trajetCircleSpan2 {
+    box-sizing: border-box;
+    color: rgb(108, 109, 111);
+    display: block;
+    height: 42px;
+    text-align: center;
+    width: 4px;
+    perspective-origin: 2px 21px;
+    transform-origin: 2px 21px;
+    background: #6CCDDA none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(108, 109, 111);
+    font: normal normal normal normal 16px / 27.5555px Karla, Helvetica, Arial, sans-serif;
+    margin: 0px 7px;
+    outline: rgb(108, 109, 111) none 0px;
+}
+
+#trajetCircleSpan3 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: #6CCDDA;
+    display: block;
+    height: 18px;
+    position: absolute;
+    text-align: center;
+    width: 18px;
+    perspective-origin: 9px 9px;
+    transform-origin: 9px 9px;
+    border: 4px solid #6CCDDA;
+    border-radius: 50% 50% 50% 50%;
+    font: normal normal normal normal 16px / 22px Karla, Helvetica, Arial, sans-serif;
+    outline: #6CCDDA none 0px;
+}
+
+#trajetCircleSpan1Bis {
+    box-sizing: border-box;
+    color: #F46C7C;
+    display: block;
+    height: 18px;
+    text-align: center;
+    width: 18px;
+    perspective-origin: 9px 9px;
+    transform-origin: 9px 9px;
+    border: 4px solid #F46C7C;
+    border-radius: 50% 50% 50% 50%;
+    font: normal normal normal normal 16px / 22px Karla, Helvetica, Arial, sans-serif;
+    outline: #F46C7C none 0px;
+}
+
+#trajetCircleSpan2Bis {
+    box-sizing: border-box;
+    color: #F46C7C;
+    display: block;
+    height: 42px;
+    text-align: center;
+    width: 4px;
+    perspective-origin: 2px 21px;
+    transform-origin: 2px 21px;
+    background: #F46C7C none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none #F46C7C;
+    font: normal normal normal normal 16px / 27.5555px Karla, Helvetica, Arial, sans-serif;
+    margin: 0px 7px;
+    outline: #F46C7C none 0px;
+}
+
+#trajetCircleSpan3Bis {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: #F46C7C;
+    display: block;
+    height: 18px;
+    position: absolute;
+    text-align: center;
+    width: 18px;
+    perspective-origin: 9px 9px;
+    transform-origin: 9px 9px;
+    border: 4px solid #F46C7C;
+    border-radius: 50% 50% 50% 50%;
+    font: normal normal normal normal 16px / 22px Karla, Helvetica, Arial, sans-serif;
+    outline: #F46C7C none 0px;
+}
+
+#trajetCircleDivBis {
+    box-sizing: border-box;
+    color: rgb(108, 109, 111);
+    position: relative;
+    text-align: center;
+    width: 18px;
+    perspective-origin: 9px 38px;
+    transform-origin: 9px 38px;
+    border: 0px none rgb(108, 109, 111);
+    font: normal normal normal normal 16px / 27.5555px Karla, Helvetica, Arial, sans-serif;
+    outline: rgb(108, 109, 111) none 0px;
+}
+
+#trajetCircleSpanImage {
+    box-sizing: border-box;
+    color: #6CCDDA;
+    display: block;
+    height: 64px;
+    text-align: center;
+    width: 64px;
+    perspective-origin: 9px 9px;
+    transform-origin: 9px 9px;
+    border: 4px solid #6CCDDA;
+    border-radius: 50% 50% 50% 50%;
+    font: normal normal normal normal 16px / 22px Karla, Helvetica, Arial, sans-serif;
+    outline: #6CCDDA none 0px;
+}
+
+#trajetCircleSpanBarre {
+    box-sizing: border-box;
+    color: rgb(108, 109, 111);
+    display: block;
+    height: 42px;
+    text-align: center;
+    width: 4px;
+    perspective-origin: 2px 21px;
+    transform-origin: 2px 21px;
+    background: #6CCDDA none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(108, 109, 111);
+    font: normal normal normal normal 16px / 27.5555px Karla, Helvetica, Arial, sans-serif;
+    margin: 0px 30px;
+    outline: rgb(108, 109, 111) none 0px;
+}
+
+#trajetCircleSpanImageRed {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: #F46C7C;
+    display: block;
+    height: 64px;
+    position: absolute;
+    text-align: center;
+    width: 64px;
+    perspective-origin: 9px 9px;
+    transform-origin: 9px 9px;
+    border: 4px solid #F46C7C;
+    border-radius: 50% 50% 50% 50%;
+    font: normal normal normal normal 16px / 22px Karla, Helvetica, Arial, sans-serif;
+    outline: #F46C7C none 0px;
+}
+
+legend{
+    margin-bottom: 0;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+th {text-align:center}
+
+fieldset p {
+    line-height: 0px  !important;
+    font-size: 14px;
+}
+
+
+.btn-rouge {
+    color: #fff;
+    background-color: #F46C7C;
+    border-color: #F46C71;
+}
+
+.btn-rouge:hover {
+    color: #fff;
+    background-color: #F46C87;
+    border-color: #F46C7C;
+}

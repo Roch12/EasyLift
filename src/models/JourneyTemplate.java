@@ -42,7 +42,7 @@ public class JourneyTemplate {
         return PointsCollection;
     }
 
-public void setPointsCollection(ArrayList<String> pointsCollection) {
+    public void setPointsCollection(ArrayList<String> pointsCollection) {
         PointsCollection = pointsCollection;
     }
 

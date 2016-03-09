@@ -15,8 +15,8 @@ import java.io.IOException;
 public class MapController {
     @RequestMapping(method = RequestMethod.GET)
     public String printHello(ModelMap model) throws IOException {
-        String gmaptest = new GMapApiTest().GMapApiTestOfTest();
-        model.addAttribute("result", gmaptest);
+//        String gmaptest = new GMapApiTest().GMapApiTestOfTest();
+//        model.addAttribute("result", gmaptest);
 
         return "map";
     }
