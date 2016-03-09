@@ -37,6 +37,19 @@
         <url-pattern>/Journey</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>map</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>map</servlet-name>
+        <url-pattern>/Map</url-pattern>
+    </servlet-mapping>
+
+
+
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.css</url-pattern>
