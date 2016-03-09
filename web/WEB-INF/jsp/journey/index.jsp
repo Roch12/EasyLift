@@ -58,6 +58,7 @@
                         <table class="table table-bordered text-center">
                             <thead>
                             <tr>
+                                <th></th>
                                 <th>Monday</th>
                                 <th>Tuesday</th>
                                 <th>Wednesday</th>
@@ -68,12 +69,22 @@
                             </thead>
                             <tbody>
                             <tr>
+                                <td style="font-weight: bold">Aller</td>
                                 <td>8H00</td>
                                 <td>8H00</td>
                                 <td>8H00</td>
                                 <td>8H00</td>
                                 <td>8H00</td>
                                 <td>8H00</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">Retour</td>
+                                <td>17H30</td>
+                                <td>17H30</td>
+                                <td>17H30</td>
+                                <td>17H30</td>
+                                <td>17H30</td>
+                                <td>17H30</td>
                             </tr>
                             </tbody>
                         </table>
@@ -135,5 +146,6 @@
             </div>
         </div>
         </div><!-- /.container -->
+        <jsp:include page="/WEB-INF/jsp/login.jsp"></jsp:include>
     </jsp:body>
 </t:layout_simple>

@@ -69,5 +69,6 @@
                     </div>
             </div>
         </div>
+        <jsp:include page="/WEB-INF/jsp/login.jsp"></jsp:include>
     </jsp:body>
 </t:layout_simple>
