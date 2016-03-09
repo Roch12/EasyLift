@@ -6,4 +6,5 @@ package DatabaseModels;
 public class LoginModel extends DbContext {
     public String Username;
     public String Password;
+    public int UserId;
 }

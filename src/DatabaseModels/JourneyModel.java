@@ -8,4 +8,5 @@ public class JourneyModel extends DbContext {
     public int JourneyId;
     public int CarId;
     public boolean IsDriver;
+    public int PlaceAvailable;
 }

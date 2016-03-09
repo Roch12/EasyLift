@@ -24,6 +24,7 @@ public class JourneyManager implements IManager<JourneyModel> {
             model.JourneyId = rs.getInt("JourneyId");
             model.UserId = rs.getInt("UserId");
             model.IsDriver = rs.getBoolean("IsDriver");
+            model.PlaceAvailable = rs.getInt("PlaceAvailable");
             models.add(model);
         }
         rs.close();
@@ -31,7 +32,23 @@ public class JourneyManager implements IManager<JourneyModel> {
     }
 
     @Override
-    public JourneyModel Get(String journeyTemplateId) throws Exception {
+    public JourneyModel Get(String id) throws Exception {
+        JourneyModel model = new JourneyModel();
+        ResultSet rs = ExecuteQuery("SELECT * FROM Journey WHERE Id =" + id + ";");
+
+        while (rs.next()) {
+            model.Id = rs.getInt("Id");
+            model.CarId = rs.getInt("CarId");
+            model.JourneyId = rs.getInt("JourneyId");
+            model.UserId = rs.getInt("UserId");
+            model.IsDriver = rs.getBoolean("IsDriver");
+            model.PlaceAvailable = rs.getInt("PlaceAvailable");
+        }
+        rs.close();
+        return model;
+    }
+
+    public JourneyModel GetFromTemplate(String journeyTemplateId) throws Exception {
         JourneyModel model = new JourneyModel();
         ResultSet rs = ExecuteQuery("SELECT * FROM Journey WHERE JourneyId =" + journeyTemplateId + ";");
 
@@ -41,6 +58,7 @@ public class JourneyManager implements IManager<JourneyModel> {
             model.JourneyId = rs.getInt("JourneyId");
             model.UserId = rs.getInt("UserId");
             model.IsDriver = rs.getBoolean("IsDriver");
+            model.PlaceAvailable = rs.getInt("PlaceAvailable");
         }
         rs.close();
         return model;
