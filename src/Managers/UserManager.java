@@ -29,6 +29,7 @@ public class UserManager implements IManager<UserModel> {
             model.Lastname = rs.getString("Lastname");
             model.HomeLocation = rs.getString("HomeLocation");
             model.Promotion = rs.getString("Promotion");
+            model.Picture = rs.getString("Picture");
             model.Sex = rs.getBoolean("Sex");
             model.IsDriver = rs.getBoolean("IsDriver");
             models.add(model);
@@ -49,6 +50,7 @@ public class UserManager implements IManager<UserModel> {
             model.JourneyTemplateId = rs.getInt("JourneyTemplateId");
             model.JourneyId = rs.getInt("JourneyId");
             model.CarId = rs.getInt("CarId");
+            model.Picture = rs.getString("Picture");
             model.Firstname = rs.getString("Firstname");
             model.Lastname = rs.getString("Lastname");
             model.HomeLocation = rs.getString("HomeLocation");
@@ -62,13 +64,13 @@ public class UserManager implements IManager<UserModel> {
 
     @Override
     public void Insert(UserModel model) throws Exception {
-        String query = "INSERT INTO User (Firstname, Lastname, HomeLocation, Promotion, Sex, IsDriver, CalendarId, JourneyTemplateId, JourneyId, CarId) VALUES (" + model.Firstname + ", " + model.Lastname + ", " + model.HomeLocation + ", " + model.Promotion + ", " + model.Sex + ", " + model.IsDriver + ", " + model.CalendarId + ", " + model.JourneyTemplateId + ", " + model.JourneyId + ", " + model.CarId + ");";
+        String query = "INSERT INTO User (Firstname, Lastname, HomeLocation, Promotion, Sex, IsDriver, CalendarId, JourneyTemplateId, JourneyId, CarId, Picture) VALUES (" + model.Firstname + ", " + model.Lastname + ", " + model.HomeLocation + ", " + model.Promotion + ", " + model.Sex + ", " + model.IsDriver + ", " + model.CalendarId + ", " + model.JourneyTemplateId + ", " + model.JourneyId + ", " + model.CarId + ", "+model.Picture+");";
         int rs = ExecuteUpdate(query);
     }
 
     @Override
     public void Update(UserModel model) throws Exception {
-        String query = "UPDATE User SET Firstname = " + model.Firstname + ", Lastname = " + model.Lastname + ", HomeLocation = " + model.HomeLocation + ", Promotion = " + model.Promotion + ", Sex = " + model.Sex + ", IsDriver = " + model.IsDriver + ", CalendarId = " + model.CalendarId + ", JourneyTemplateId =  " + model.JourneyTemplateId + ", JourneyId = " + model.JourneyId + ", CarId = " + model.CarId + " WHERE Id = " + model.Id + ";";
+        String query = "UPDATE User SET Firstname = " + model.Firstname + ", Lastname = " + model.Lastname + ", HomeLocation = " + model.HomeLocation + ", Promotion = " + model.Promotion + ", Sex = " + model.Sex + ", IsDriver = " + model.IsDriver + ", CalendarId = " + model.CalendarId + ", JourneyTemplateId =  " + model.JourneyTemplateId + ", JourneyId = " + model.JourneyId + ", CarId = " + model.CarId + ", Picture = "+model.Picture+" WHERE Id = " + model.Id + ";";
         int rs = ExecuteUpdate(query);
     }
 

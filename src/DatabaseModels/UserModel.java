@@ -14,4 +14,5 @@ public class UserModel extends DbContext {
     public int JourneyTemplateId;
     public int JourneyId;
     public int CarId;
+    public String Picture;
 }
