@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/Map")
 public class MapController {
     @RequestMapping(method = RequestMethod.GET)
     public String printHello(ModelMap model) throws IOException {

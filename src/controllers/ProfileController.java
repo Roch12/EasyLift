@@ -6,18 +6,18 @@ package controllers;
 
 import models.Tile;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Controller
-public class HomeController {
+@RequestMapping("/Profile")
+public class ProfileController {
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String printHello(ModelMap model) {
         ArrayList<Tile> listTile = new ArrayList<Tile>();
         listTile.add(new Tile(0,"JoseZorro","Jose","San miguel de la rosa",new Date(),2,4,"ici","Master 2"));

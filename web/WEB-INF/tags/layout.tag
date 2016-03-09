@@ -41,6 +41,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/Journey/Search">Search</a></li>
                 <li><a style="cursor: pointer" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                <li><a href="/Profile" class="fa fa-user"></a></li>
             </ul>
             <a style="display:none; padding: 8px 15px;" class="navbar-brand" href="/">
                 <img style="height: 40px;" src="/resources/img/Easylift_logo.png"/>
