@@ -20,11 +20,12 @@ public final class LoginManager implements IManager<LoginModel> {
         ResultSet rs = ExecuteQuery("SELECT * FROM Login");
 
         while (rs.next()) {
-            LoginModel loginModel = new LoginModel();
-            loginModel.Id  = rs.getInt("Id");
-            loginModel.Username = rs.getString("Username");
-            loginModel.Password = rs.getString("Password");
-            models.add(loginModel);
+            LoginModel model = new LoginModel();
+            model.Id  = rs.getInt("Id");
+            model.Username = rs.getString("Username");
+            model.Password = rs.getString("Password");
+            model.UserId = rs.getInt("UserId");
+            models.add(model);
         }
 
         rs.close();
@@ -39,6 +40,7 @@ public final class LoginManager implements IManager<LoginModel> {
             model.Id = rs.getInt("Id");
             model.Password = rs.getString("Password");
             model.Username = rs.getString("Username");
+            model.UserId = rs.getInt("UserId");
         }
         rs.close();
         return model;
