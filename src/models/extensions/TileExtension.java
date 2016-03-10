@@ -31,7 +31,7 @@ public class TileExtension {
 
         for (JourneyTemplateModel journeyTemplate : journeyTemplateModelList) {
             UserModel user = new UserManager().Get(Integer.toString(journeyTemplate.UserId));
-            LoginModel login = new LoginManager().Get(Integer.toString(user.Id));
+            LoginModel login = new LoginManager().GetFromUserId(Integer.toString(user.Id));
             CarModel car = new CarManager().Get(Integer.toString(user.CarId));
 
             Tile tile = new Tile(journeyTemplate.Id, login.Username, user.Firstname, user.Lastname, journeyTemplate.StartDateTime, journeyTemplate.PlaceAvailable, car.Seats, journeyTemplate.StartLocation, user.Promotion, user.Picture);
