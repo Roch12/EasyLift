@@ -31,8 +31,9 @@ public class Journey {
         Journey journey = new Journey();
 
         UserModel driverModel = new UserManager().Get(journeyTemplateId);
+        LoginModel loginModel = new LoginManager().GetFromUserId(userId);
         CarModel carModel = new CarManager().Get(Integer.toString(driverModel.CarId));
-        journey.Driver = models.Driver.UserModelToDriver(driverModel, carModel);
+        journey.Driver = models.Driver.UserModelToDriver(driverModel, carModel, loginModel);
 
         CalendarModel calendarModel = new CalendarManager().Get(userId);
         journey.Schedule = Calendar.CalendarModelToCalendar(calendarModel);

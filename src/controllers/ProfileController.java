@@ -20,8 +20,8 @@ public class ProfileController {
     @RequestMapping(method = RequestMethod.GET)
     public String printHello(ModelMap model) {
         ArrayList<Tile> listTile = new ArrayList<Tile>();
-        listTile.add(new Tile(0,"JoseZorro","Jose","San miguel de la rosa",new Date(),2,4,"ici","Master 2"));
-        listTile.add(new Tile(0,"JoseZorro","Jose","San miguel de la rosa",new Date(),2,4,"ici", "Bachelor 2"));
+        listTile.add(new Tile(0,"JoseZorro","Jose","San miguel de la rosa",new Date(),2,4,"ici","Master 2", ""));
+        listTile.add(new Tile(0,"JoseZorro","Jose","San miguel de la rosa",new Date(),2,4,"ici", "Bachelor 2", ""));
         model.addAttribute("Tiles", listTile);
         return "index";
     }

@@ -15,8 +15,9 @@ public class Tile {
     private int PlaceMaximum;
     private String StartLocation;
     private String Promo;
+    public String UserPicture;
 
-    public Tile(int id, String username, String firstName, String lastName, Date dateStart, int placeAvailable, int placeMaximum, String startLocation, String promo) {
+    public Tile(int id, String username, String firstName, String lastName, Date dateStart, int placeAvailable, int placeMaximum, String startLocation, String promo, String userPicture) {
         Id = id;
         Username = username;
         FirstName = firstName;
@@ -26,6 +27,7 @@ public class Tile {
         PlaceMaximum = placeMaximum;
         StartLocation = startLocation;
         Promo = promo;
+        UserPicture = userPicture;
     }
 
     public int getId() {

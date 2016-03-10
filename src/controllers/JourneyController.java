@@ -23,7 +23,7 @@ public class JourneyController {
     @RequestMapping(value="/Search", method=RequestMethod.GET)
     public String search(ModelMap model) {
 
-        model.addAttribute("tile", new Tile(0,"JoseZorro","Jose","San miguel de la rosa",new Date(),2,4,"ici","Master 2"));
+        model.addAttribute("tile", new Tile(0,"JoseZorro","Jose","San miguel de la rosa",new Date(),2,4,"ici","Master 2", ""));
         return "search";
     }
 }
