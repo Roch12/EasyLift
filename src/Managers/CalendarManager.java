@@ -23,20 +23,20 @@ public class CalendarManager implements IManager<CalendarModel> {
             CalendarModel model = new CalendarModel();
             model.Id = rs.getInt("Id");
             model.UserId = rs.getInt("UserId");
-            model.MondayStart = rs.getDate("ModayStart");
-            model.MondayEnd = rs.getDate("ModayEnd");
-            model.TuesdayStart = rs.getDate("TuesdayStart");
-            model.TuesdayEnd = rs.getDate("TuesdayEnd");
-            model.WenesdayStart = rs.getDate("WenesdayStart");
-            model.WenesdayEnd = rs.getDate("WenesdayEnd");
-            model.ThursdayStart = rs.getDate("ThursdayStart");
-            model.ThursdayEnd = rs.getDate("ThursdayEnd");
-            model.FridayStart = rs.getDate("FridayStart");
-            model.FridayEnd = rs.getDate("FridayEnd");
-            model.SaturdayStart = rs.getDate("SaturdayStart");
-            model.SaturdayEnd = rs.getDate("SaturdayEnd");
-            model.SundayStart = rs.getDate("SundayStart");
-            model.SundayEnd = rs.getDate("SundayEnd");
+            model.MondayStart = rs.getString("MondayStart");
+            model.MondayEnd = rs.getString("MondayEnd");
+            model.TuesdayStart = rs.getString("TuesdayStart");
+            model.TuesdayEnd = rs.getString("TuesdayEnd");
+            model.WenesdayStart = rs.getString("WenesdayStart");
+            model.WenesdayEnd = rs.getString("WenesdayEnd");
+            model.ThursdayStart = rs.getString("ThursdayStart");
+            model.ThursdayEnd = rs.getString("ThursdayEnd");
+            model.FridayStart = rs.getString("FridayStart");
+            model.FridayEnd = rs.getString("FridayEnd");
+            model.SaturdayStart = rs.getString("SaturdayStart");
+            model.SaturdayEnd = rs.getString("SaturdayEnd");
+            model.SundayStart = rs.getString("SundayStart");
+            model.SundayEnd = rs.getString("SundayEnd");
             models.add(model);
         }
 
@@ -46,24 +46,24 @@ public class CalendarManager implements IManager<CalendarModel> {
 
     @Override
     public CalendarModel Get(String userId) throws SQLException {
-        ResultSet rs = ExecuteQuery("SELECT * FROM Login WHERE UserId =" + userId + "");
+        ResultSet rs = ExecuteQuery("SELECT * FROM Calendar WHERE UserId =" + userId + "");
         CalendarModel model = new CalendarModel();
         while (rs.next()) {
             model.UserId = rs.getInt("UserId");
-            model.MondayStart = rs.getDate("ModayStart");
-            model.MondayEnd = rs.getDate("ModayEnd");
-            model.TuesdayStart = rs.getDate("TuesdayStart");
-            model.TuesdayEnd = rs.getDate("TuesdayEnd");
-            model.WenesdayStart = rs.getDate("WenesdayStart");
-            model.WenesdayEnd = rs.getDate("WenesdayEnd");
-            model.ThursdayStart = rs.getDate("ThursdayStart");
-            model.ThursdayEnd = rs.getDate("ThursdayEnd");
-            model.FridayStart = rs.getDate("FridayStart");
-            model.FridayEnd = rs.getDate("FridayEnd");
-            model.SaturdayStart = rs.getDate("SaturdayStart");
-            model.SaturdayEnd = rs.getDate("SaturdayEnd");
-            model.SundayStart = rs.getDate("SundayStart");
-            model.SundayEnd = rs.getDate("SundayEnd");
+            model.MondayStart = rs.getString("MondayStart");
+            model.MondayEnd = rs.getString("MondayEnd");
+            model.TuesdayStart = rs.getString("TuesdayStart");
+            model.TuesdayEnd = rs.getString("TuesdayEnd");
+            model.WenesdayStart = rs.getString("WenesdayStart");
+            model.WenesdayEnd = rs.getString("WenesdayEnd");
+            model.ThursdayStart = rs.getString("ThursdayStart");
+            model.ThursdayEnd = rs.getString("ThursdayEnd");
+            model.FridayStart = rs.getString("FridayStart");
+            model.FridayEnd = rs.getString("FridayEnd");
+            model.SaturdayStart = rs.getString("SaturdayStart");
+            model.SaturdayEnd = rs.getString("SaturdayEnd");
+            model.SundayStart = rs.getString("SundayStart");
+            model.SundayEnd = rs.getString("SundayEnd");
         }
         rs.close();
         return model;
