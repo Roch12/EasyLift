@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class CalendarModel extends DbContext {
     public int UserId;
-    public Date MondayStart;
-    public Date MondayEnd;
-    public Date TuesdayStart;
-    public Date TuesdayEnd;
-    public Date WenesdayStart;
-    public Date WenesdayEnd;
-    public Date ThursdayStart;
-    public Date ThursdayEnd;
-    public Date FridayStart;
-    public Date FridayEnd;
-    public Date SaturdayStart;
-    public Date SaturdayEnd;
-    public Date SundayStart;
-    public Date SundayEnd;
+    public String MondayStart;
+    public String MondayEnd;
+    public String TuesdayStart;
+    public String TuesdayEnd;
+    public String WenesdayStart;
+    public String WenesdayEnd;
+    public String ThursdayStart;
+    public String ThursdayEnd;
+    public String FridayStart;
+    public String FridayEnd;
+    public String SaturdayStart;
+    public String SaturdayEnd;
+    public String SundayStart;
+    public String SundayEnd;
 }

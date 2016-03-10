@@ -35,7 +35,7 @@ public class TileExtension {
 
         for (JourneyTemplateModel journeyTemplate : journeyTemplateModelList) {
             UserModel user = new UserManager().Get(Integer.toString(journeyTemplate.UserId));
-            LoginModel login = new LoginManager().Get(Integer.toString(user.Id));
+            LoginModel login = new LoginManager().GetFromUserId(Integer.toString(user.Id));
             CarModel car = new CarManager().Get(Integer.toString(user.CarId));
 
             List<String> coordinateList = new ArrayList<String>(Arrays.asList(journeyTemplate.StartLocation.split(",")));
