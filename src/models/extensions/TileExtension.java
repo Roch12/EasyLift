@@ -18,7 +18,7 @@ public class TileExtension {
         CarModel car = new CarManager().Get(Integer.toString(user.CarId));
         JourneyTemplateModel journeyTemplate = new JourneyTemplateManager().Get(Integer.toString(user.JourneyTemplateId));
 
-        return new Tile(user.Id, login.Username, user.Firstname, user.Lastname, journeyTemplate.StartDateTime, journeyTemplate.PlaceAvailable, car.Seats, journeyTemplate.StartLocation, user.Promotion);
+        return new Tile(journeyTemplate.Id, login.Username, user.Firstname, user.Lastname, journeyTemplate.StartDateTime, journeyTemplate.PlaceAvailable, car.Seats, journeyTemplate.StartLocation, user.Promotion);
     }
 
     public static List<Tile> RetrieveAllTiles() throws Exception {
@@ -34,7 +34,7 @@ public class TileExtension {
             LoginModel login = new LoginManager().Get(Integer.toString(user.Id));
             CarModel car = new CarManager().Get(Integer.toString(user.CarId));
 
-            Tile tile = new Tile(user.Id, login.Username, user.Firstname, user.Lastname, journeyTemplate.StartDateTime, journeyTemplate.PlaceAvailable, car.Seats, journeyTemplate.StartLocation, user.Promotion);
+            Tile tile = new Tile(journeyTemplate.Id, login.Username, user.Firstname, user.Lastname, journeyTemplate.StartDateTime, journeyTemplate.PlaceAvailable, car.Seats, journeyTemplate.StartLocation, user.Promotion);
             tiles.add(tile);
         }
 
