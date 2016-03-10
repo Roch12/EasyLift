@@ -1,5 +1,6 @@
-package controllers;
+package controllers.Map;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -42,10 +43,11 @@ public class GMapApiManager {
         String address = new String();
         String query = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+coordinate.Latitude+","+coordinate.Longitude+"&key="+apikey;
         String queryJSONResult = QueryGMAPApi(query);
+       // System.out.println(queryJSONResult);
         JSONObject jObject = new JSONObject(queryJSONResult);
         try {
-            String results = jObject.getString("results");
-            JSONObject resultJSONObject = new JSONObject(results);
+            JSONArray results = jObject.getJSONArray("results");
+            JSONObject resultJSONObject = results.getJSONObject(1);
             address = resultJSONObject.getString("formatted_address");
 
         } catch (JSONException e) {
@@ -62,16 +64,13 @@ public class GMapApiManager {
         String queryJSONResult = QueryGMAPApi(query);
         JSONObject jObject = new JSONObject(queryJSONResult);
         try {
-         String results= jObject.getString("results");
-            JSONObject resultJSONObject = new JSONObject(results);
-
-           JSONObject geometry = resultJSONObject.getJSONObject("geometry");
-          JSONObject location=  geometry.getJSONObject("location");
+            JSONArray results = jObject.getJSONArray("results");
+            JSONObject resultJSONObject = results.getJSONObject(0);
+            JSONObject geometry = resultJSONObject.getJSONObject("geometry");
+            JSONObject location=  geometry.getJSONObject("location");
             double latitude = location.getDouble("lat");
             double longitude = location.getDouble("lng");
-            coordinateToReturn.Latitude = latitude;
-            coordinateToReturn.Longitude = longitude;
-
+            coordinateToReturn = new Coordinate(latitude,longitude);
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -82,19 +81,6 @@ public class GMapApiManager {
     public static String GetWapointsBetweenToLocationsAsJSON(String startLocation, String destinationLocation) throws IOException {
         String query = "https://maps.googleapis.com/maps/api/directions/json?origin="+startLocation+"&destination="+destinationLocation+"&key="+apikey;
 
-
-        //URL url = new URL(query);
-        //URLConnection yc = url.openConnection();
-        //BufferedReader in = new BufferedReader(
-        //        new InputStreamReader(
-        //                yc.getInputStream()));
-        //String inputLine;
-        //String res = new String();
-        //while ((inputLine = in.readLine()) != null) {
-        //    System.out.println(inputLine);
-        //    res+=inputLine;
-        //}
-        //in.close();
         return  QueryGMAPApi(query);
 
     }

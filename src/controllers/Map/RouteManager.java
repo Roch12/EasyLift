@@ -1,4 +1,4 @@
-package controllers;
+package controllers.Map;
 
 
 import org.json.JSONArray;
@@ -40,6 +40,7 @@ public class RouteManager {
         return  coordinates.get(closestElementIndex);
     }
 
+    ///Return the distance (a vol d'oiseau) between two coordinates in meters
     public static double GetDistanceBetweenTwoCoordinates(Coordinate coord1, Coordinate coord2)
     {
         double result=0;

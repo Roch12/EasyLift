@@ -1,6 +1,6 @@
 package models;
 
-import controllers.RouteManager;
+import controllers.Map.RouteManager;
 import org.json.JSONException;
 
 import java.io.IOException;
