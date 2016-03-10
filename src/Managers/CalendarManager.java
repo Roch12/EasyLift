@@ -78,7 +78,7 @@ public class CalendarManager implements IManager<CalendarModel> {
 
     @Override
     public void Update(CalendarModel model) throws Exception {
-        String query = "UPDATE Calendar SET User = " + model.UserId + ", MondayStart = " + model.MondayStart + ", MondayEnd = " + model.MondayEnd + ", TuesdayStart = " + model.TuesdayStart + ", TuesdayEnd = " + model.TuesdayEnd + ", WenesdayStart = " + model.WenesdayStart + ", WenesdayEnd = " + model.WenesdayEnd + ", ThursdayStart = " + model.ThursdayStart + ", ThursdayEnd = " + model.ThursdayEnd + ", FridayStart = " + model.FridayStart + ", FridayEnd = " + model.FridayEnd + ", SaturdayStart = " + model.SaturdayStart + ", SaturdayEnd = " + model.SaturdayStart + ", SundayStart = " + model.SundayStart + ", SundayEnd = " + model.SundayEnd + ") +" +
+        String query = "UPDATE Calendar SET Driver = " + model.UserId + ", MondayStart = " + model.MondayStart + ", MondayEnd = " + model.MondayEnd + ", TuesdayStart = " + model.TuesdayStart + ", TuesdayEnd = " + model.TuesdayEnd + ", WenesdayStart = " + model.WenesdayStart + ", WenesdayEnd = " + model.WenesdayEnd + ", ThursdayStart = " + model.ThursdayStart + ", ThursdayEnd = " + model.ThursdayEnd + ", FridayStart = " + model.FridayStart + ", FridayEnd = " + model.FridayEnd + ", SaturdayStart = " + model.SaturdayStart + ", SaturdayEnd = " + model.SaturdayStart + ", SundayStart = " + model.SundayStart + ", SundayEnd = " + model.SundayEnd + ") +" +
                 " WHERE Id = " + model.Id + ";";
         int rs = ExecuteUpdate(query);
     }

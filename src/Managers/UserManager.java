@@ -16,7 +16,7 @@ public class UserManager implements IManager<UserModel> {
     @Override
     public List<UserModel> GetAll() throws Exception {
         List<UserModel> models = new ArrayList<>();
-        ResultSet rs = ExecuteQuery("SELECT * FROM User");
+        ResultSet rs = ExecuteQuery("SELECT * FROM Driver");
 
         while (rs.next()) {
             UserModel model = new UserModel();
@@ -29,6 +29,7 @@ public class UserManager implements IManager<UserModel> {
             model.Lastname = rs.getString("Lastname");
             model.HomeLocation = rs.getString("HomeLocation");
             model.Promotion = rs.getString("Promotion");
+            model.School = rs.getString("School");
             model.Picture = rs.getString("Picture");
             model.Sex = rs.getBoolean("Sex");
             model.IsDriver = rs.getBoolean("IsDriver");
@@ -42,7 +43,7 @@ public class UserManager implements IManager<UserModel> {
     @Override
     public UserModel Get(String id) throws Exception {
         UserModel model = new UserModel();
-        ResultSet rs = ExecuteQuery("SELECT * FROM User WHERE Id = " + id + ";");
+        ResultSet rs = ExecuteQuery("SELECT * FROM Driver WHERE Id = " + id + ";");
 
         while (rs.next()) {
             model.Id = rs.getInt("Id");
@@ -55,6 +56,7 @@ public class UserManager implements IManager<UserModel> {
             model.Lastname = rs.getString("Lastname");
             model.HomeLocation = rs.getString("HomeLocation");
             model.Promotion = rs.getString("Promotion");
+            model.School = rs.getString("School");
             model.Sex = rs.getBoolean("Sex");
             model.IsDriver = rs.getBoolean("IsDriver");
         }
@@ -64,19 +66,19 @@ public class UserManager implements IManager<UserModel> {
 
     @Override
     public void Insert(UserModel model) throws Exception {
-        String query = "INSERT INTO User (Firstname, Lastname, HomeLocation, Promotion, Sex, IsDriver, CalendarId, JourneyTemplateId, JourneyId, CarId, Picture) VALUES (" + model.Firstname + ", " + model.Lastname + ", " + model.HomeLocation + ", " + model.Promotion + ", " + model.Sex + ", " + model.IsDriver + ", " + model.CalendarId + ", " + model.JourneyTemplateId + ", " + model.JourneyId + ", " + model.CarId + ", "+model.Picture+");";
+        String query = "INSERT INTO Driver (Firstname, Lastname, HomeLocation, Promotion, School, Sex, IsDriver, CalendarId, JourneyTemplateId, JourneyId, CarId, Picture) VALUES (" + model.Firstname + ", " + model.Lastname + ", " + model.HomeLocation + ", " + model.Promotion + ", "+model.School+" ," + model.Sex + ", " + model.IsDriver + ", " + model.CalendarId + ", " + model.JourneyTemplateId + ", " + model.JourneyId + ", " + model.CarId + ", "+model.Picture+");";
         int rs = ExecuteUpdate(query);
     }
 
     @Override
     public void Update(UserModel model) throws Exception {
-        String query = "UPDATE User SET Firstname = " + model.Firstname + ", Lastname = " + model.Lastname + ", HomeLocation = " + model.HomeLocation + ", Promotion = " + model.Promotion + ", Sex = " + model.Sex + ", IsDriver = " + model.IsDriver + ", CalendarId = " + model.CalendarId + ", JourneyTemplateId =  " + model.JourneyTemplateId + ", JourneyId = " + model.JourneyId + ", CarId = " + model.CarId + ", Picture = "+model.Picture+" WHERE Id = " + model.Id + ";";
+        String query = "UPDATE Driver SET Firstname = " + model.Firstname + ", Lastname = " + model.Lastname + ", HomeLocation = " + model.HomeLocation + ", Promotion = " + model.Promotion + ", School = "+model.School+", Sex = " + model.Sex + ", IsDriver = " + model.IsDriver + ", CalendarId = " + model.CalendarId + ", JourneyTemplateId =  " + model.JourneyTemplateId + ", JourneyId = " + model.JourneyId + ", CarId = " + model.CarId + ", Picture = "+model.Picture+" WHERE Id = " + model.Id + ";";
         int rs = ExecuteUpdate(query);
     }
 
     @Override
     public void Delete(UserModel model) throws Exception {
-        String query = "DELETE FROM User WHERE Id = " + model.Id + ";";
+        String query = "DELETE FROM Driver WHERE Id = " + model.Id + ";";
         int rs = ExecuteUpdate(query);
     }
 }

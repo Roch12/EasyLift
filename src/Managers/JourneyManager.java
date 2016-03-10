@@ -1,6 +1,7 @@
 package Managers;
 
 import DatabaseModels.JourneyModel;
+import models.Journey;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -33,8 +34,7 @@ public class JourneyManager implements IManager<JourneyModel> {
     @Override
     public JourneyModel Get(String id) throws Exception {
         JourneyModel model = new JourneyModel();
-        ResultSet rs = ExecuteQuery("SELECT * FROM Journey WHERE Id =" + id + ";");
-
+        ResultSet rs = ExecuteQuery("SELECT * FROM Journey WHERE Id = " + id + ";");
         while (rs.next()) {
             model.Id = rs.getInt("Id");
             model.CarId = rs.getInt("CarId");
@@ -46,19 +46,21 @@ public class JourneyManager implements IManager<JourneyModel> {
         return model;
     }
 
-    public JourneyModel GetFromTemplate(String journeyTemplateId) throws Exception {
-        JourneyModel model = new JourneyModel();
+    public List<JourneyModel> GetFromTemplate(String journeyTemplateId) throws Exception {
+        List<JourneyModel> models = new ArrayList<>();
         ResultSet rs = ExecuteQuery("SELECT * FROM Journey WHERE JourneyId =" + journeyTemplateId + ";");
 
         while (rs.next()) {
+            JourneyModel model = new JourneyModel();
             model.Id = rs.getInt("Id");
             model.CarId = rs.getInt("CarId");
             model.JourneyId = rs.getInt("JourneyId");
             model.UserId = rs.getInt("UserId");
             model.IsDriver = rs.getBoolean("IsDriver");
+            models.add(model);
         }
         rs.close();
-        return model;
+        return models;
     }
 
     @Override
