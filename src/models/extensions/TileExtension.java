@@ -25,8 +25,12 @@ public class TileExtension {
         return new Tile(journeyTemplate.Id, login.Username, user.Firstname, user.Lastname, journeyTemplate.StartDateTime, journeyTemplate.PlaceAvailable, car.Seats, journeyTemplate.StartLocation, user.Promotion, addressStartLocation, user.Picture);
     }
 
-    public static List<Tile> RetrieveAllTiles() throws Exception {
-        List<JourneyTemplateModel> journeyTemplateModelList = new JourneyTemplateManager().GetAll();
+    public static List<Tile> RetrieveAllTiles(int limitation) throws Exception {
+        List<JourneyTemplateModel> journeyTemplateModelList = null;
+        if(limitation == -1)
+            journeyTemplateModelList = new JourneyTemplateManager().GetAll();
+        else
+            journeyTemplateModelList = new JourneyTemplateManager().GetAll(limitation);
 
         if (journeyTemplateModelList.size() <= 0)
             return null;

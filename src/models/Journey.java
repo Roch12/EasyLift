@@ -13,7 +13,7 @@ public class Journey {
     public Driver Driver;
     public List<Passenger> Passengers;
     public Calendar Schedule;
-    public String StartLocation;
+    private String StartLocation;
 
     public Journey() {
         Passengers = new ArrayList<>();
@@ -30,7 +30,7 @@ public class Journey {
         String userId = Integer.toString(journeyTemplateModel.UserId);
         String journeyTemplateId = Integer.toString(journeyTemplateModel.Id);
         Journey journey = new Journey();
-        journey.StartLocation = journeyTemplateModel.StartLocation;
+        journey.setStartLocation(journeyTemplateModel.StartLocation);
 
         UserModel driverModel = new UserManager().Get(journeyTemplateId);
         LoginModel loginModel = new LoginManager().GetFromUserId(userId);
@@ -49,5 +49,37 @@ public class Journey {
         }
 
         return journey;
+    }
+
+    public models.Driver getDriver() {
+        return Driver;
+    }
+
+    public void setDriver(models.Driver driver) {
+        Driver = driver;
+    }
+
+    public List<Passenger> getPassengers() {
+        return Passengers;
+    }
+
+    public void setPassengers(List<Passenger> passengers) {
+        Passengers = passengers;
+    }
+
+    public Calendar getSchedule() {
+        return Schedule;
+    }
+
+    public void setSchedule(Calendar schedule) {
+        Schedule = schedule;
+    }
+
+    public String getStartLocation() {
+        return StartLocation;
+    }
+
+    public void setStartLocation(String startLocation) {
+        StartLocation = startLocation;
     }
 }

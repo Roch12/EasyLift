@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-10 p-rel">
-                                    <div class="place place-origin">
+                                    <div class="place place-origin" style="font-size: 13px;">
                                         <a href="">
                                                 ${tile.address}
                                         </a>
@@ -92,7 +92,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-10 p-rel">
-                                        <div class="place place-origin">
+                                        <div class="place place-origin" style="font-size: 13px;">
                                             <a href="">
                                                     ${tile.address}
                                             </a>

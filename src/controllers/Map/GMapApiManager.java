@@ -49,6 +49,8 @@ public class GMapApiManager {
             JSONArray results = jObject.getJSONArray("results");
             JSONObject resultJSONObject = results.getJSONObject(1);
             address = resultJSONObject.getString("formatted_address");
+            if(address.length() > 30)
+                address = address.substring(0,27) + "...";
 
         } catch (JSONException e) {
             e.printStackTrace();

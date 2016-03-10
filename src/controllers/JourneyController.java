@@ -34,7 +34,7 @@ public class JourneyController {
     public String search(ModelMap model) {
         List<Tile> listTile = null;
         try {
-            listTile = TileExtension.RetrieveAllTiles();
+            listTile = TileExtension.RetrieveAllTiles(-1);
             model.addAttribute("Tiles", listTile);
         } catch (Exception e) {
             e.printStackTrace();

@@ -29,7 +29,7 @@
                                         <div class="row">
                                             <div class="col-xs-12 latest-left text-center">
                                                 <div class="col-xs-6">
-                                                    <img class="img-circle display-ib v-middle mrs" width="64" height="64" src="https://s3.amazonaws.com/uifaces/faces/twitter/rem/128.jpg" alt="Avatar">
+                                                    <img class="img-circle display-ib v-middle mrs" width="64" height="64" src="data:image/jpg;base64,<c:out value="${tile.userPicture}"/>" alt="Avatar">
                                                 </div>
                                                 <div style="margin-top:6px; padding-left: 0px;" class="col-xs-6 display-ib latesttripname">
                                                     <div class="font18 font-bold">${tile.username}</div>

@@ -31,6 +31,23 @@ public class JourneyTemplateManager implements IManager<JourneyTemplateModel> {
         return models;
     }
 
+    public List<JourneyTemplateModel> GetAll(int limitation) throws Exception {
+        List<JourneyTemplateModel> models = new ArrayList<>();
+        ResultSet rs = ExecuteQuery("SELECT * FROM JourneyTemplate LIMIT " + limitation + ";");
+        while (rs.next()) {
+            JourneyTemplateModel model = new JourneyTemplateModel();
+            model.Id = rs.getInt("Id");
+            model.UserId = rs.getInt("UserId");
+            model.StartDateTime = rs.getDate("StartDateTime");
+            model.PointCollection = rs.getString("PointCollection");
+            model.StartLocation = rs.getString("StartLocation");
+            model.PlaceAvailable = rs.getInt("PlaceAvailable");
+            models.add(model);
+        }
+        rs.close();
+        return models;
+    }
+
     @Override
     public JourneyTemplateModel Get(String id) throws Exception {
         JourneyTemplateModel model = new JourneyTemplateModel();

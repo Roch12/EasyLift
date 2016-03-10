@@ -23,21 +23,21 @@
                 <div class="panel-body">
                     <div class="row row-centered">
                         <div class="col-md-4">
-                            <img class="img-circle-high" width="128" height="128" src="https://s3.amazonaws.com/uifaces/faces/twitter/rem/128.jpg" alt="Avatar">
-                            <div>@${journey.}</div>
+                            <img class="img-circle-high" width="128" height="128" src="data:image/png;base64,<c:out value="${journey.driver.picture}"/>" alt="Avatar">
+                            <div>@${journey.driver.pseudo}</div>
                         </div>
                         <div class="col-md-8 col-centered">
                             <fieldset>
                                 <legend>User</legend>
-                                <p>Nom : Juan Jose</p>
-                                <p>Ecole : Ingesup</p>
-                                <p>Classe : Master 2</p>
-                                <p>Sexe : F</p>
+                                <p>Nom : ${journey.driver.name}</p>
+                                <p>Ecole : ${journey.driver.school}</p>
+                                <p>Classe : ${journey.driver.promotion}</p>
+                                <p>Sexe : ${journey.driver.sex}</p>
                             </fieldset>
                             <fieldset>
                                 <legend>Car</legend>
-                                <p>Marque : Audi</p>
-                                <p> Nombre de place : 12</p>
+                                <p>Marque : ${journey.driver.userCar.brand}</p>
+                                <p> Nombre de place : ${journey.driver.userCar.seats}</p>
                             </fieldset>
                             </hr>
 
@@ -68,21 +68,21 @@
                             <tbody>
                             <tr>
                                 <td style="font-weight: bold">Aller</td>
-                                <td>8H00</td>
-                                <td>8H00</td>
-                                <td>8H00</td>
-                                <td>8H00</td>
-                                <td>8H00</td>
-                                <td>8H00</td>
+                                <td>${journey.schedule.monday.start}</td>
+                                <td>${journey.schedule.tuesday.start}</td>
+                                <td>${journey.schedule.wenesday.start}</td>
+                                <td>${journey.schedule.thursday.start}</td>
+                                <td>${journey.schedule.friday.start}</td>
+                                <td>${journey.schedule.saturday.start}</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: bold">Retour</td>
-                                <td>17H30</td>
-                                <td>17H30</td>
-                                <td>17H30</td>
-                                <td>17H30</td>
-                                <td>17H30</td>
-                                <td>17H30</td>
+                                <td>${journey.schedule.monday.end}</td>
+                                <td>${journey.schedule.tuesday.end}</td>
+                                <td>${journey.schedule.wenesday.end}</td>
+                                <td>${journey.schedule.thursday.end}</td>
+                                <td>${journey.schedule.friday.end}</td>
+                                <td>${journey.schedule.saturday.end}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -107,7 +107,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div id="trajetCircleDivBis">
-                                <span id="trajetCircleSpanImage" style="background: url('/resources/img/Easylift_cover.jpg');     background-size: 64px 64px;"></span>
+                                <span id="trajetCircleSpanImage" style="background: url(data:image/png;base64,${journey.driver.picture});     background-size: 64px 64px;"></span>
                                 <span id="trajetCircleSpanBarre"></span>
                             </div>
                         </div>
@@ -116,16 +116,16 @@
                         </div>
                     </div>
 
-        <c:forEach var="i" begin="1" end="4">
+        <c:forEach var="user" items="${journey.passengers}">
             <div class="row">
                 <div class="col-md-4">
                     <div id="trajetCircleDivBis">
-                        <span id="trajetCircleSpanImage" style="background: url('/resources/img/Easylift_cover.jpg');     background-size: 64px 64px;"></span>
+                        <span id="trajetCircleSpanImage" style="background: url(data:image/png;base64,${user.picture});     background-size: 64px 64px;"></span>
                         <span id="trajetCircleSpanBarre"></span>
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span style="font-size: 13px; line-height: 64px;">Jose ${i}</span>
+                    <span style="font-size: 13px; line-height: 64px;">${user.name}</span>
                 </div>
             </div>
         </c:forEach>
@@ -133,7 +133,7 @@
                     <div class="row">
                         <div class="col-md-4">
                     <div id="trajetCircleDivBis" style="height:64px;" >
-                        <span id="trajetCircleSpanImageRed" style="background: url('/resources/img/Easylift_cover.jpg');     background-size: 64px 64px;"></span>
+                        <span id="trajetCircleSpanImageRed" style="background: url('https://pbs.twimg.com/profile_images/582850767410724864/RxIJQoRR.png'); background-size: 64px 64px;"></span>
                         </div>
                         </div>
                         <div class="col-md-8">
@@ -149,8 +149,8 @@
             $(document).ready(function() {
                 init();
                 console.log( "ready!" );
-                //trouveRoute("43.5974101,1.4128089"); //stcyp
-                trouveRoute("43.5446257,1.3256384"); //cugnaux
+                trouveRoute('<c:out value="${journey.startLocation}"/>'); //stcyp
+                //trouveRoute(); //cugnaux
             });
         </script>
     </jsp:body>

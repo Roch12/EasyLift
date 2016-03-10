@@ -22,7 +22,7 @@ public class HomeController {
     public String printHello(ModelMap model) {
         List<Tile> listTile = null;
         try {
-            listTile = TileExtension.RetrieveAllTiles();
+            listTile = TileExtension.RetrieveAllTiles(5);
             model.addAttribute("Tiles", listTile);
         } catch (Exception e) {
             e.printStackTrace();
