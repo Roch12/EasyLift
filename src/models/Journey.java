@@ -1,13 +1,7 @@
 package models;
 
-import DatabaseModels.CarModel;
-import DatabaseModels.JourneyModel;
-import DatabaseModels.JourneyTemplateModel;
-import DatabaseModels.UserModel;
-import Managers.CarManager;
-import Managers.JourneyManager;
-import Managers.JourneyTemplateManager;
-import Managers.UserManager;
+import DatabaseModels.*;
+import Managers.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +10,7 @@ import java.util.List;
  * Created by Johan on 10/03/2016.
  */
 public class Journey {
-    public Driver driver;
+    public Driver Driver;
     public List<Passenger> Passengers;
     public Calendar Schedule;
 
@@ -33,12 +27,17 @@ public class Journey {
             return null;
 
         String userId = Integer.toString(journeyTemplateModel.UserId);
+        String journeyTemplateId = Integer.toString(journeyTemplateModel.Id);
         Journey journey = new Journey();
-        UserModel driverModel = new UserManager().Get(Integer.toString(journeyTemplateModel.UserId));
-        CarModel carModel = new CarManager().Get(Integer.toString(driverModel.CarId));
-        Driver driver = Driver.UserModelToDriver(driverModel, carModel);
 
-        List<JourneyModel> journeyModels = new JourneyManager().GetFromTemplate(Integer.toString(journeyTemplateModel.Id));
+        UserModel driverModel = new UserManager().Get(journeyTemplateId);
+        CarModel carModel = new CarManager().Get(Integer.toString(driverModel.CarId));
+        journey.Driver = models.Driver.UserModelToDriver(driverModel, carModel);
+
+        CalendarModel calendarModel = new CalendarManager().Get(userId);
+        journey.Schedule = Calendar.CalendarModelToCalendar(calendarModel);
+
+        List<JourneyModel> journeyModels = new JourneyManager().GetFromTemplate(journeyTemplateId);
 
         for (JourneyModel j : journeyModels) {
             UserModel passengerModel = new UserManager().Get(Integer.toString(j.UserId));

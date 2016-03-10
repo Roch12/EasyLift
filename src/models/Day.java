@@ -8,4 +8,11 @@ import java.util.Date;
 public class Day {
     public Date Start;
     public Date End;
+
+    public Day() {}
+
+    public Day(Date start, Date end) {
+        Start = start;
+        End = end;
+    }
 }
