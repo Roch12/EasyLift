@@ -5,6 +5,7 @@ package controllers;
  */
 
 import models.Tile;
+import models.extensions.TileExtension;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.ModelMap;
@@ -19,10 +20,14 @@ public class HomeController {
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String printHello(ModelMap model) {
-        ArrayList<Tile> listTile = new ArrayList<Tile>();
-        listTile.add(new Tile(0,"JoseZorro","Jose","San miguel de la rosa",new Date(),2,4,"ici","Master 2"));
-        listTile.add(new Tile(0,"JoseZorro","Jose","San miguel de la rosa",new Date(),2,4,"ici", "Bachelor 2"));
-        model.addAttribute("Tiles", listTile);
+        List<Tile> listTile = null;
+        try {
+            listTile = TileExtension.RetrieveAllTiles();
+            model.addAttribute("Tiles", listTile);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return "index";
     }
 }
