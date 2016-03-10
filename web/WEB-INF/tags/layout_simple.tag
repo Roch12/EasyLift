@@ -85,6 +85,53 @@
         </div>
     </div>
 </footer>
-    <script src="/resources/js/bootstrap.min.js"></script>
+<script src="/resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+    var directionsService = new google.maps.DirectionsService();
+    var map,geocoder, marker;
+    var depart,arrivee = new google.maps.LatLng(43.5446257,1.3256384) ,ptCheck;
+
+    /*initialise google MAP V3*/
+    function init() {
+        console.log("init");
+        /*gestion des routes*/
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        /*option par défaut de la carte*/
+        var myOptions = {
+            zoom:4,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: arrivee
+        }
+        /*creation de la map*/
+        map = new google.maps.Map(document.getElementById("divMap"), myOptions);
+        /*connexion de la map + le panneau de l'itinéraire*/
+        directionsDisplay.setMap(map);
+        /*intialise le geocoder pour localiser les adresses */
+        geocoder = new google.maps.Geocoder();
+    }
+
+
+    function trouveRoute(origin) {
+        /*test si les variables sont bien initialisés*/
+        var listlocation = origin.split(',');
+        var location = new google.maps.LatLng(parseFloat(listlocation[0]), parseFloat(listlocation[1]));
+            /*mode de transport*/
+            var choixMode = "DRIVING";
+            var request = {
+                origin:location,
+                destination:new google.maps.LatLng(43.6249627,1.4304408),
+                travelMode: google.maps.DirectionsTravelMode[choixMode]
+            };
+            console.log(request);
+            /*appel à l'API pour tracer l'itinéraire*/
+            directionsService.route(request, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                    console.log("Itineraire OK");
+                }
+            });
+    }
+</script>
 </body>
 </html>

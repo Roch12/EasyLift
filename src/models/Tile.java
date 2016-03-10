@@ -15,9 +15,10 @@ public class Tile {
     private int PlaceMaximum;
     private String StartLocation;
     private String Promo;
-    public String UserPicture;
+    private String Address;
+    private String UserPicture;
 
-    public Tile(int id, String username, String firstName, String lastName, Date dateStart, int placeAvailable, int placeMaximum, String startLocation, String promo, String userPicture) {
+    public Tile(int id, String username, String firstName, String lastName, Date dateStart, int placeAvailable, int placeMaximum, String startLocation, String promo, String address, String userPicture) {
         Id = id;
         Username = username;
         FirstName = firstName;
@@ -27,6 +28,7 @@ public class Tile {
         PlaceMaximum = placeMaximum;
         StartLocation = startLocation;
         Promo = promo;
+        Address = address;
         UserPicture = userPicture;
     }
 
@@ -100,5 +102,21 @@ public class Tile {
 
     public void setPromo(String promo) {
         Promo = promo;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getUserPicture() {
+        return UserPicture;
+    }
+
+    public void setUserPicture(String userPicture) {
+        UserPicture = userPicture;
     }
 }

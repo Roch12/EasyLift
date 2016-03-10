@@ -7,6 +7,7 @@
         <div class="col-md-6">
             <h2 style="margin-bottom: 30px; color: #6CCDDA;" class="col-md-12 text-center">Aller</h2>
        <c:forEach var="tile" items="${Tiles}">
+           <a href="/Journey?id=<c:out value="${tile.id}"/>">
             <div style="height:194px;" class="tiles col-md-4 col-sm-4 col-xs-6">
                 <div class="row">
                     <div class="col-md-6 prn">
@@ -14,7 +15,7 @@
                             <div class="row">
                                 <div class="col-xs-12 latest-left text-center">
                                     <div class="col-xs-6">
-                                        <img class="img-circle display-ib v-middle mrs" width="64" height="64" src="https://s3.amazonaws.com/uifaces/faces/twitter/rem/128.jpg" alt="Avatar">
+                                        <img class="img-circle display-ib v-middle mrs" width="64" height="64" src="data:image/jpg;base64,<c:out value="${tile.userPicture}"/>" alt="Avatar">
                                     </div>
                                     <div style="margin-top:6px; padding-left: 0px;" class="col-xs-6 display-ib latesttripname">
                                         <div class="font18 font-bold">${tile.username}</div>
@@ -37,7 +38,7 @@
                                 <div class="col-xs-10 p-rel">
                                     <div class="place place-origin">
                                         <a href="">
-                                                ${tile.startLocation}
+                                                ${tile.address}
                                         </a>
                                     </div>
                                     <div class="latesttripdate font18 font-bold">
@@ -53,10 +54,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <img style="height: 97px; width: 100%" src="http://maps.google.com/maps/api/staticmap?center=43.6249529,1.4318564&zoom=17&markers=icon:http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/map-marker-icon.png|43.6249529,1.4318564&path=color:0x0000FF80|weight:5|25.3176452,82.97391440000001&size=600x97" alt="22 impasse charles fourier toulouse">
+                    <img style="height: 97px; width: 100%" src="http://maps.google.com/maps/api/staticmap?center=<c:out value="${tile.startLocation}"></c:out>&zoom=17&markers=icon:http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/map-marker-icon.png|<c:out value="${tile.startLocation}"></c:out>&path=color:0x0000FF80|weight:5|25.3176452,82.97391440000001&size=600x97" alt="<c:out value="${tile.address}"></c:out>">
                 </div>
             </div>
-
+           </a>
         </c:forEach>
         </div>
 
@@ -70,7 +71,7 @@
                                 <div class="row">
                                     <div class="col-xs-12 latest-left text-center">
                                         <div class="col-xs-6">
-                                            <img class="img-circle display-ib v-middle mrs" width="64" height="64" src="https://s3.amazonaws.com/uifaces/faces/twitter/rem/128.jpg" alt="Avatar">
+                                            <img class="img-circle display-ib v-middle mrs" width="64" height="64" src="data:image/jpg;base64,<c:out value="${tile.userPicture}"/>" alt="Avatar">
                                         </div>
                                         <div style="margin-top:6px; padding-left: 0px;" class="col-xs-6 display-ib latesttripname">
                                             <div class="font18 font-bold">${tile.username}</div>
@@ -93,7 +94,7 @@
                                     <div class="col-xs-10 p-rel">
                                         <div class="place place-origin">
                                             <a href="">
-                                                    ${tile.startLocation}
+                                                    ${tile.address}
                                             </a>
                                         </div>
                                         <div class="latesttripdate font18 font-bold">
@@ -109,7 +110,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <img style="height: 97px; width: 100%" src="http://maps.google.com/maps/api/staticmap?center=43.6249529,1.4318564&zoom=17&markers=icon:http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/map-marker-icon.png|43.6249529,1.4318564&path=color:0x0000FF80|weight:5|25.3176452,82.97391440000001&size=600x97" alt="22 impasse charles fourier toulouse">
+                        <img style="height: 97px; width: 100%" src="http://maps.google.com/maps/api/staticmap?center=<c:out value="${tile.startLocation}"></c:out>&zoom=17&markers=icon:http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/map-marker-icon.png|<c:out value="${tile.startLocation}"></c:out>&path=color:0x0000FF80|weight:5|25.3176452,82.97391440000001&size=600x97" alt="<c:out value="${tile.address}"></c:out>">
                     </div>
                 </div>
 

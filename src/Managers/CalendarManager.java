@@ -23,8 +23,8 @@ public class CalendarManager implements IManager<CalendarModel> {
             CalendarModel model = new CalendarModel();
             model.Id = rs.getInt("Id");
             model.UserId = rs.getInt("UserId");
-            model.MondayStart = rs.getDate("ModayStart");
-            model.MondayEnd = rs.getDate("ModayEnd");
+            model.MondayStart = rs.getDate("MondayStart");
+            model.MondayEnd = rs.getDate("MondayEnd");
             model.TuesdayStart = rs.getDate("TuesdayStart");
             model.TuesdayEnd = rs.getDate("TuesdayEnd");
             model.WenesdayStart = rs.getDate("WenesdayStart");
@@ -46,12 +46,12 @@ public class CalendarManager implements IManager<CalendarModel> {
 
     @Override
     public CalendarModel Get(String userId) throws SQLException {
-        ResultSet rs = ExecuteQuery("SELECT * FROM Login WHERE UserId =" + userId + "");
+        ResultSet rs = ExecuteQuery("SELECT * FROM Calendar WHERE UserId =" + userId + "");
         CalendarModel model = new CalendarModel();
         while (rs.next()) {
             model.UserId = rs.getInt("UserId");
-            model.MondayStart = rs.getDate("ModayStart");
-            model.MondayEnd = rs.getDate("ModayEnd");
+            model.MondayStart = rs.getDate("MondayStart");
+            model.MondayEnd = rs.getDate("MondayEnd");
             model.TuesdayStart = rs.getDate("TuesdayStart");
             model.TuesdayEnd = rs.getDate("TuesdayEnd");
             model.WenesdayStart = rs.getDate("WenesdayStart");

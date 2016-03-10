@@ -2,9 +2,12 @@ package models.extensions;
 
 import DatabaseModels.*;
 import Managers.*;
+import controllers.Map.Coordinate;
+import controllers.Map.GMapApiManager;
 import models.Tile;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -17,8 +20,9 @@ public class TileExtension {
         UserModel user = new UserManager().Get(Integer.toString(login.UserId));
         CarModel car = new CarManager().Get(Integer.toString(user.CarId));
         JourneyTemplateModel journeyTemplate = new JourneyTemplateManager().Get(Integer.toString(user.JourneyTemplateId));
-
-        return new Tile(journeyTemplate.Id, login.Username, user.Firstname, user.Lastname, journeyTemplate.StartDateTime, journeyTemplate.PlaceAvailable, car.Seats, journeyTemplate.StartLocation, user.Promotion, user.Picture);
+        List<String> coordinateList = new ArrayList<String>(Arrays.asList(journeyTemplate.StartLocation.split(",")));
+        String addressStartLocation = GMapApiManager.CoordinatesToAdrres(new Coordinate(Double.parseDouble(coordinateList.get(0)),Double.parseDouble(coordinateList.get(1))));
+        return new Tile(journeyTemplate.Id, login.Username, user.Firstname, user.Lastname, journeyTemplate.StartDateTime, journeyTemplate.PlaceAvailable, car.Seats, journeyTemplate.StartLocation, user.Promotion, addressStartLocation, user.Picture);
     }
 
     public static List<Tile> RetrieveAllTiles() throws Exception {
@@ -34,8 +38,9 @@ public class TileExtension {
             LoginModel login = new LoginManager().Get(Integer.toString(user.Id));
             CarModel car = new CarManager().Get(Integer.toString(user.CarId));
 
-            Tile tile = new Tile(journeyTemplate.Id, login.Username, user.Firstname, user.Lastname, journeyTemplate.StartDateTime, journeyTemplate.PlaceAvailable, car.Seats, journeyTemplate.StartLocation, user.Promotion, user.Picture);
-            tiles.add(tile);
+            List<String> coordinateList = new ArrayList<String>(Arrays.asList(journeyTemplate.StartLocation.split(",")));
+            String addressStartLocation = GMapApiManager.CoordinatesToAdrres(new Coordinate(Double.parseDouble(coordinateList.get(0)),Double.parseDouble(coordinateList.get(1))));
+            tiles.add(new Tile(journeyTemplate.Id, login.Username, user.Firstname, user.Lastname, journeyTemplate.StartDateTime, journeyTemplate.PlaceAvailable, car.Seats, journeyTemplate.StartLocation, user.Promotion, addressStartLocation, user.Picture));
         }
 
         return tiles;

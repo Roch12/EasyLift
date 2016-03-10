@@ -7,9 +7,7 @@
 
 
         <header class="intro-header">
-            <div style="width: 100%">
-                <iframe style="width:100%" height="400" src="http://regiohelden.de/google-maps/map_en.php?height=400&amp;hl=en&amp;q=22%20impasse%20charles%20fourrier%20toulouse+(Ingesup)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-            </div>
+            <div id="divMap" style="width:100%; height:400px; padding-bottom:30px;"></div>
         </header>
 
         <div class="container" style="padding-bottom: 15px; padding-top: 30px;">
@@ -26,7 +24,7 @@
                     <div class="row row-centered">
                         <div class="col-md-4">
                             <img class="img-circle-high" width="128" height="128" src="https://s3.amazonaws.com/uifaces/faces/twitter/rem/128.jpg" alt="Avatar">
-                            <div>@JozeZorro</div>
+                            <div>@${journey.}</div>
                         </div>
                         <div class="col-md-8 col-centered">
                             <fieldset>
@@ -147,5 +145,13 @@
         </div>
         </div><!-- /.container -->
         <jsp:include page="/WEB-INF/jsp/login.jsp"></jsp:include>
+        <script>
+            $(document).ready(function() {
+                init();
+                console.log( "ready!" );
+                //trouveRoute("43.5974101,1.4128089"); //stcyp
+                trouveRoute("43.5446257,1.3256384"); //cugnaux
+            });
+        </script>
     </jsp:body>
 </t:layout_simple>

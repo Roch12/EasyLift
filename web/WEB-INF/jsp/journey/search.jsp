@@ -20,6 +20,7 @@
                 </div>
             </div>
             <div class="row">
+                <c:forEach var="tile" items="${Tiles}">
                     <div class="col-md-6">
                         <div style="height:97px;" class="tiles col-md-4 col-sm-4 col-xs-6">
                             <div class="row">
@@ -48,10 +49,10 @@
                                                     <span id="trajetCircleSpan3Bis"></span>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-10 p-rel">
+                                            <div class="col-xs-10 p-rel" style="padding:0; white-space:nowrap;">
                                                 <div class="place place-origin">
                                                     <a href="">
-                                                            ${tile.startLocation}
+                                                            ${tile.address}
                                                     </a>
                                                 </div>
                                                 <div class="latesttripdate font18 font-bold">
@@ -68,6 +69,7 @@
                             </div>
                     </div>
             </div>
+                </c:forEach>
         </div>
         <jsp:include page="/WEB-INF/jsp/login.jsp"></jsp:include>
     </jsp:body>
