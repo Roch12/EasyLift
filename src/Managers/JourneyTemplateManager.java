@@ -22,7 +22,7 @@ public class JourneyTemplateManager implements IManager<JourneyTemplateModel> {
             model.Id = rs.getInt("Id");
             model.UserId = rs.getInt("UserId");
             model.StartDateTime = rs.getDate("StartDateTime");
-            model.PointCollection = rs.getString("PointCollections");
+            model.PointCollection = rs.getString("PointCollection");
             model.StartLocation = rs.getString("StartLocation");
             model.PlaceAvailable = rs.getInt("PlaceAvailable");
             models.add(model);
@@ -40,7 +40,7 @@ public class JourneyTemplateManager implements IManager<JourneyTemplateModel> {
             model.Id = rs.getInt("Id");
             model.UserId = rs.getInt("UserId");
             model.StartDateTime = rs.getDate("StartDateTime");
-            model.PointCollection = rs.getString("PointCollections");
+            model.PointCollection = rs.getString("PointCollection");
             model.StartLocation = rs.getString("StartLocation");
             model.PlaceAvailable = rs.getInt("PlaceAvailable");
         }
