@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Informations <a href="#" class="fa fa-edit pull-right" style="text-decoration: none;"></a></h3>
+                            <h3 class="panel-title">Informations <a id="editGeneral" href="javascript:void(0)" class="fa fa-edit pull-right" style="text-decoration: none;"></a></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row row-centered">
@@ -31,20 +31,101 @@
                                     <div>@JozeZorro</div>
                                 </div>
                                 <div class="col-md-8 col-centered">
-                                    <fieldset>
-                                        <legend>General</legend>
-                                        <p>Name : Juan Jose</p>
-                                        <p>School : Ingesup</p>
-                                        <p>Class : Master 2</p>
-                                        <p>Gender : M</p>
-                                    </fieldset>
-                                    <fieldset>
-                                        <legend>Car</legend>
-                                        <p>Brand : Audi</p>
-                                        <p>Seat : 12</p>
-                                    </fieldset>
-                                    </hr>
+                                    <div class="profilNormal" style="display: block;">
+                                        <fieldset>
+                                            <legend>General</legend>
+                                            <p>Name : Juan Jose</p>
+                                            <p>School : Ingesup</p>
+                                            <p>Class : Master 2</p>
+                                            <p>Gender : M</p>
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend>Car</legend>
+                                            <p>Brand : Audi</p>
+                                            <p>Seat : 12</p>
+                                        </fieldset>
+                                        </hr>
+                                    </div>
+                                    <div class="profilEdit" style="display: none;">
+                                        <form class="form-horizontal">
+                                            <fieldset>
+                                                <!-- Form Name -->
+                                                <legend>General</legend><br/>
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label" for="name">Name</label>
+                                                    <div class="col-md-8">
+                                                        <input id="name" name="name" type="text" placeholder="Firstname Lastname" class="form-control input-md">
 
+                                                    </div>
+                                                </div>
+                                                <!-- Select Basic -->
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label" for="gender">Gender</label>
+                                                    <div class="col-md-8">
+                                                        <select id="gender" name="gender" class="form-control">
+                                                            <option value="m">M</option>
+                                                            <option value="f">F</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- Select Basic -->
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label" for="promo">Class</label>
+                                                    <div class="col-md-8">
+                                                        <select id="promo" name="promo" class="form-control">
+                                                            <option value="1">Expert 1</option>
+                                                            <option value="2">Expert 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- Select Basic -->
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label" for="school">School</label>
+                                                    <div class="col-md-8">
+                                                        <select id="school" name="school" class="form-control">
+                                                            <option value="INGESUP">INGESUP</option>
+                                                            <option value="ESCAA">ESCAA</option>
+                                                            <option value="LIMART">LIMART</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset>
+                                                <!-- Form Name -->
+                                                <legend>Car</legend><br/>
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label" for="brand">Brand</label>
+                                                    <div class="col-md-8">
+                                                        <input id="brand" name="brand" type="text" placeholder="Car brand" class="form-control input-md">
+
+                                                    </div>
+                                                </div>
+                                                <!-- Select Basic -->
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label" for="seat">Seats</label>
+                                                    <div class="col-md-8">
+                                                        <select id="seat" name="seat" class="form-control">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- Button (Double) -->
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label" for=""></label>
+                                                    <div class="col-md-8 pull-right">
+                                                        <button id="saveGeneral" name="save" class="btn btn-success">Save</button>
+                                                        <button id="cancelGeneral" name="cancel" class="btn btn-danger">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -53,9 +134,9 @@
                 <div class="row">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Hours <a href="#" class="fa fa-edit pull-right" style="text-decoration: none;"></a></h3>
+                            <h3 class="panel-title">Hours <a id="editHour" href="javascript:void(0)" class="fa fa-edit pull-right" style="text-decoration: none;"></a></h3>
                         </div>
-                        <div class="panel-body">
+                        <div class="panel-body profilDateNormal" style="display: block;">
                             <table class="table table-bordered text-center">
                                 <thead>
                                 <tr>
@@ -90,11 +171,176 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="panel-body profilDateEdit" style="display: none;">
+                            <form>
+                                <table class="table table-bordered text-center">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                        <th>Saturday</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="font-weight: bold">Aller</td>
+                                        <td>
+                                            <div class="col-md-12">
+                                            <select id="morningHour1" name="" class="form-control">
+                                                <option value="1">7</option>
+                                                <option value="2">8</option>
+                                                <option value="3">9</option>
+                                                <option value="4">10</option>
+                                                <option value="5">11</option>
+                                            </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="morningHour2" name="" class="form-control">
+                                                    <option value="1">7</option>
+                                                    <option value="2">8</option>
+                                                    <option value="3">9</option>
+                                                    <option value="4">10</option>
+                                                    <option value="5">11</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="morningHour3" name="" class="form-control">
+                                                    <option value="1">7</option>
+                                                    <option value="2">8</option>
+                                                    <option value="3">9</option>
+                                                    <option value="4">10</option>
+                                                    <option value="5">11</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="morningHour4" name="" class="form-control">
+                                                    <option value="1">7</option>
+                                                    <option value="2">8</option>
+                                                    <option value="3">9</option>
+                                                    <option value="4">10</option>
+                                                    <option value="5">11</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="morningHour5" name="" class="form-control">
+                                                    <option value="1">7</option>
+                                                    <option value="2">8</option>
+                                                    <option value="3">9</option>
+                                                    <option value="4">10</option>
+                                                    <option value="5">11</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="morningHour6" name="" class="form-control">
+                                                    <option value="1">7</option>
+                                                    <option value="2">8</option>
+                                                    <option value="3">9</option>
+                                                    <option value="4">10</option>
+                                                    <option value="5">11</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold">Retour</td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="afternoonHour1" name="" class="form-control">
+                                                    <option value="1">15</option>
+                                                    <option value="2">16</option>
+                                                    <option value="3">17</option>
+                                                    <option value="4">18</option>
+                                                    <option value="5">19</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="afternoonHour2" name="" class="form-control">
+                                                    <option value="1">15</option>
+                                                    <option value="2">16</option>
+                                                    <option value="3">17</option>
+                                                    <option value="4">18</option>
+                                                    <option value="5">19</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="afternoonHour3" name="" class="form-control">
+                                                    <option value="1">15</option>
+                                                    <option value="2">16</option>
+                                                    <option value="3">17</option>
+                                                    <option value="4">18</option>
+                                                    <option value="5">19</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="afternoonHour4" name="" class="form-control">
+                                                    <option value="1">15</option>
+                                                    <option value="2">16</option>
+                                                    <option value="3">17</option>
+                                                    <option value="4">18</option>
+                                                    <option value="5">19</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="afternoonHour5" name="" class="form-control">
+                                                    <option value="1">15</option>
+                                                    <option value="2">16</option>
+                                                    <option value="3">17</option>
+                                                    <option value="4">18</option>
+                                                    <option value="5">19</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <select id="afternoonHour6" name="" class="form-control">
+                                                    <option value="1">15</option>
+                                                    <option value="2">16</option>
+                                                    <option value="3">17</option>
+                                                    <option value="4">18</option>
+                                                    <option value="5">19</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <!-- Button (Double) -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for=""></label>
+                                    <div class="col-md-8 pull-right">
+                                        <button id="saveHour" name="save" class="btn btn-success">Save</button>
+                                        <button id="cancelHour" name="cancel" class="btn btn-danger">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         <div class="col-md-5">
-            <h2 style="margin-bottom: 30px; color: #F46C7C; margin-top: 0px;" class="col-md-12 text-center">Your journeys <a href="#" class="fa fa-plus" style="text-decoration: none; float: right; color:#6CCDDA;"></a></h2>
+            <h2 style="margin-bottom: 30px; color: #F46C7C; margin-top: 0px;" class="col-md-12 text-center">Your journeys <a href="javascript:void(0)" class="fa fa-plus" data-toggle="modal" data-target="#journey-modal" style="text-decoration: none; float: right; color:#6CCDDA;"></a></h2>
             <c:forEach var="tile" items="${Tiles}">
             <div style="height:97px;" class="tiles col-md-4 col-sm-4 col-xs-6">
                 <div class="row">
@@ -146,5 +392,31 @@
         </div>
         </div>
         <jsp:include page="/WEB-INF/jsp/login.jsp"></jsp:include>
+        <jsp:include page="/WEB-INF/jsp/addJourney.jsp"></jsp:include>
+        <script>
+            $("#editGeneral").click(function(){
+                var display = $('.profilNormal').css('display');
+                if(display == "block")
+                {
+                    $(".profilNormal").css("display", "none");
+                    $(".profilEdit").css("display", "block");
+                }else{
+                    $(".profilNormal").css("display", "block");
+                    $(".profilEdit").css("display", "none");
+                }
+            });
+
+            $("#editHour").click(function(){
+                var display = $('.profilDateNormal').css('display');
+                if(display == "block")
+                {
+                    $(".profilDateNormal").css("display", "none");
+                    $(".profilDateEdit").css("display", "block");
+                }else{
+                    $(".profilDateNormal").css("display", "block");
+                    $(".profilDateEdit").css("display", "none");
+                }
+            });
+        </script>
     </jsp:body>
 </t:layout_simple>
