@@ -13,7 +13,6 @@
             <h1>Login</h1><br/>
             <form style="margin-bottom: 5px;">
                 <input type="text" name="user" placeholder="Username">
-                <input type="password" name="pass" placeholder="Password">
                 <input type="submit" name="login" class="btn btn-primary" style="width: 100%" value="Login">
             </form>
             <button class="btn btn-success" style="width: 100%; margin-bottom: 15px;">Register</button>
