@@ -13,6 +13,7 @@ public class Journey {
     public Driver Driver;
     public List<Passenger> Passengers;
     public Calendar Schedule;
+    public String StartLocation;
 
     public Journey() {
         Passengers = new ArrayList<>();
@@ -29,6 +30,7 @@ public class Journey {
         String userId = Integer.toString(journeyTemplateModel.UserId);
         String journeyTemplateId = Integer.toString(journeyTemplateModel.Id);
         Journey journey = new Journey();
+        journey.StartLocation = journeyTemplateModel.StartLocation;
 
         UserModel driverModel = new UserManager().Get(journeyTemplateId);
         LoginModel loginModel = new LoginManager().GetFromUserId(userId);
